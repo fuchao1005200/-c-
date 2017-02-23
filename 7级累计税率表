@@ -1,0 +1,69 @@
+#include <stdio.h>
+#define tax1 0.03
+#define tax2 0.1
+#define tax3 0.2
+#define tax4 0.25
+#define tax5 0.3
+#define tax6 0.35
+#define tax7 0.45
+#define sskcs1 105
+#define sskcs2 555
+#define sskcs3 1005
+#define sskcs4 2755
+#define sskcs5 5505
+#define sskcs6 13505
+
+int main(void)
+{
+    float f_salary;
+    float ys_salary;
+    float tax;
+    printf("请输入你的工资总数：");
+    while((scanf("%f",&f_salary)) ==1)
+    {
+        ys_salary=f_salary-3000;
+        if(ys_salary <=1500)
+        {
+            tax=ys_salary*tax1;
+            printf("你应该纳税的金额为%.2f\n",tax);
+            
+        }
+        else if(ys_salary<=4500&&ys_salary>1500)
+        {
+            tax=ys_salary*tax2-sskcs1;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        
+        else if(ys_salary<=9000&&ys_salary>4500)
+        {
+            tax=ys_salary*tax3-sskcs2;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        else if(ys_salary<=35000&&ys_salary>9000)
+        {
+            tax=ys_salary*tax4-sskcs3;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        
+        else if(ys_salary<=55000&&ys_salary>35000)
+        {
+            tax=ys_salary*tax5-sskcs4;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        else if(ys_salary<=80000&&ys_salary>55000)
+        {
+            tax=ys_salary*tax6-sskcs5;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        else if(ys_salary>80000)
+        {
+            tax=ys_salary*tax7-sskcs6;
+            printf("你应该纳税的金额为%.2f\n",tax);
+        }
+        printf("请输入下一个人的工资数：");
+    }
+    printf("all done.\n");
+    return 0;
+}
+
+        
